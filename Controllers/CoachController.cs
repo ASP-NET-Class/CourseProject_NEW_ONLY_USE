@@ -10,7 +10,8 @@ using System.Threading.Tasks;
 
 namespace CourseProject.Controllers
 {
-    //[Authorize(Roles = "Coach, Administrator")]
+    // makes it so only Coaches and Administrators have access to the Coach Controller 
+    [Authorize(Roles = "Coach, Administrator")]
     public class CoachController : Controller
     {
         ApplicationDbContext db;

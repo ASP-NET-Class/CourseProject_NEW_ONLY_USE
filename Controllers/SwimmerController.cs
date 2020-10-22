@@ -10,8 +10,7 @@ using System.Threading.Tasks;
 namespace CourseProject.Controllers
 {
     // makes it so only Swimmers and Administrators have access to the Swimmer Controller 
-    // and being able to make changes
-    //[Authorize(Roles = "Swimmer, Administrator")]
+    [Authorize(Roles = "Swimmer, Administrator")]
 
     public class SwimmerController : Controller
     {

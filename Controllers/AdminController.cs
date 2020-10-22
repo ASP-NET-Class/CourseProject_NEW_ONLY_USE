@@ -9,9 +9,8 @@ using System.Threading.Tasks;
 
 namespace CourseProject.Controllers
 {
-    // makes it so only Administrators have access to the Role Controller 
-    // and being able to make changes to assigned roles
-    //[Authorize(Roles = "Administrator")]
+    // makes it so only Administrators have access to the Admin Controller 
+    [Authorize(Roles = "Administrator")]
 
 
     public class AdminController : Controller
