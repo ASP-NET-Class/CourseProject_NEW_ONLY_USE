@@ -118,5 +118,11 @@ namespace CourseProject.Controllers
             ViewData["sname"] = swimmer.SwimmerName;
             return View(allSessions);
         }
+         public async Task<IActionResult> ViewCoach()
+        {
+            var viewCoach = await db.Sessions.Include
+                    (c => c.Coach).ToListAsync();
+            return View(viewCoach);
+        }
     }
 }
