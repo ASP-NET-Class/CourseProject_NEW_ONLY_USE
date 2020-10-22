@@ -1,0 +1,26 @@
+﻿@model CourseProject.Models.Swimmer
+<h2>Add or Make Changes to Your Swimmer Profile</h2>
+<form asp-action="AddProfile">
+
+    <input asp-for="@Model.UserId" type="hidden" />
+    <label asp-for="SwimmerName">Name</label>
+    <input asp-for="SwimmerName" />
+    <br />
+    <label asp-for="SwimmerPhone">Phone</label>
+    <input asp-for="SwimmerPhone" />
+    <br />
+    <label asp-for="SwimmerGender">Gender</label>
+    <input asp-for="SwimmerGender" />
+    <br />
+    <label asp-for="SwimmerDob">Date of Birth</label>
+    <input asp-for="SwimmerDob" />
+    <br />
+
+    <p>
+        By clicking the button below, you will be adding information about yourself that is made
+        available to Coaches so they can provide better service to you. Your information will not be
+        made available to the public.
+    </p>
+    <button type="submit">Add or Edit Profile</button>
+</form>
+<p><a asp-action="Index">Back to Swimmer home</a></p>

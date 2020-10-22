@@ -1,0 +1,23 @@
+﻿@model CourseProject.Models.Lesson
+<h3>Delete the Lesson</h3>
+<p>Are you sure you want to delete this Lesson?</p>
+<form asp-controller="Admin" asp-action="DeleteLesson"
+      method="post">
+    <input asp-for="LessonId" type="hidden" />
+    <label asp-for="LessonTitle">Lesson Name</label>
+    <input asp-for="LessonTitle" />
+    <br />
+    <label asp-for="SkillLevel">Skill Level</label>
+    <input asp-for="SkillLevel" />
+    <br />
+    <label asp-for="Tuition">Tuition</label>
+    <input asp-for="Tuition" />
+    <br />
+    <button type="submit">Yes Delete</button>
+</form>
+<p>
+    <a asp-controller="Admin" asp-action="AllLesson">
+        No, Back to list
+    </a>
+</p>
+<p><a asp-controller="Admin" asp-action="Index">Back to Administrator Homepage</a></p>

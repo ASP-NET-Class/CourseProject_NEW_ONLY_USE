@@ -1,0 +1,25 @@
+﻿@model CourseProject.ViewModels.AccountLoginViewModel
+
+<h2>User Login</h2>
+<meta charset="utf-8">
+<form asp-action="Login" method="post">
+    <!--displays all error messages in this place if any-->
+    <div asp-validation-summary="All"></div>
+    <label asp-for="Email"></label>
+    <input asp-for="Email" />
+    <!--displays error message related to email in that span element if any-->
+    <span asp-validation-for="Email"></span>
+    <br />
+    <label asp-for="Password"></label>
+    <input asp-for="Password" />
+    <!--displays error message related to password in that span element if any-->
+    <span asp-validation-for="Password"></span>
+    <br />
+    <!--makes register button on registration form work-->
+    <button type="submit">Log In</button>
+    <br />
+    <br />
+    <footer>
+        @Html.ActionLink("Not Registered? Click Here!", "Register")
+    </footer>
+</form>

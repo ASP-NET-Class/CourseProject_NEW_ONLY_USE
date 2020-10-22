@@ -1,0 +1,33 @@
+﻿@model IEnumerable<CourseProject.Models.Lesson>
+
+@{
+    if (Model.Count() < 1)
+    {
+        <p>No lesson in database yet.</p>
+    }
+    else
+    {
+        <h2>All Lessons</h2>
+        <table border="1">
+            <tr>
+                <th>Lesson ID</th>
+                <th>Lesson Title</th>
+                <th>Skill Level</th>
+                <th>Tuition</th>
+                <th>Add a Session</th>
+            </tr>
+            @foreach (var lesson in Model)
+            {
+                <tr>
+                    <td>@lesson.LessonId</td>
+                    <td>@lesson.LessonTitle</td>
+                    <td>@lesson.SkillLevel</td>
+                    <td>@lesson.Tuition</td>
+                    <td><a asp-controller="Coach" asp-action="AddSession" asp-route-id="@lesson.LessonId">Add a Session</a></td>
+                </tr>
+            }
+        </table>
+    }
+}
+<br />
+<p><a asp-controller="Coach" asp-action="Index">Back to Coach Homepage</a></p>

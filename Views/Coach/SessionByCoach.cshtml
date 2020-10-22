@@ -1,0 +1,43 @@
+﻿@model IEnumerable<CourseProject.Models.Session>
+<h2>@Model.FirstOrDefault().Coach.CoachName</h2>
+@{
+    if (Model.Count() < 1)
+    {
+        <p><a asp-action="AddSession">Add a Session</a></p>
+        <p>No session in database yet.</p>
+    }
+    else
+    {
+        <h3>All Sessions</h3>
+        <table border="1">
+            <tr>
+                <th>Session ID</th>
+                <th>Session Title</th>
+                <th>First Session</th>
+                <th>Last Session</th>
+                <th>Swimmer Capacity</th>
+                <th>Start Time</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            @foreach (var session in Model)
+            {
+                <tr>
+                    <td>
+                        <a asp-controller="Coach" asp-action="PostGrade" asp-route-id="@session.SessionId">
+                            @session.SessionId
+                        </a>
+                    </td>
+                    <td>@session.SessionTitle</td>
+                    <td>@session.StartDate.ToString("MM/dd/yyyy")</td>
+                    <td>@session.EndDate.ToString("MM/dd/yyyy")</td>
+                    <td>@session.SeatCapacity</td>
+                    <td>@session.DailyStartTime.ToString("HH:mm")</td>
+                    <td><a asp-action="EditSession" asp-route-id="@session.SessionId">Edit</a></td>
+                    <td><a asp-action="DeleteSession" asp-route-id="@session.SessionId">Delete</a></td>
+                </tr>
+            }
+        </table>
+    }
+}
+<p><a asp-action="Index">Back to Coach Home</a></p>

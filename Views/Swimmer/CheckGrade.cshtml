@@ -1,0 +1,16 @@
+﻿@model IEnumerable<CourseProject.Models.Enrollment>
+<h3>Swimmer Name: @ViewData["sname"]</h3>
+<table border="1">
+    <tr>
+        <th>Session Title</th>
+        <th>Grade</th>
+    </tr>
+    @foreach (var c in Model)
+    {
+        <tr>
+            <td>@c.Session.SessionTitle</td>
+            <td>@Html.DisplayFor(m => c.LetterGrade)</td>
+        </tr>
+    }
+</table>
+<p><a asp-action="Index">Back to swimmer home</a></p>

@@ -1,0 +1,37 @@
+﻿@model List<CourseProject.Models.Enrollment>
+<h2>Enter Swimmer Grades</h2>
+<h3>Session: @Model[0].Session.SessionTitle</h3>
+<form asp-controller="Coach" asp-action="PostGrade"
+      method="post">
+    @{
+        if (Model.Count() < 1)
+        {
+            <p>No Swimmer registered for this Session yet.</p>
+        }
+        else
+        {
+            <table border="1">
+                <tr>
+                    <th></th>
+                    <th>Swimmer ID</th>
+                    <th>Coaches Feedback</th>
+                </tr>
+                @for (int i = 0; i < Model.Count(); i++)
+                {
+                    <tr>
+                        <td>
+                            <input asp-for="@Model[i].EnrollmentId" type="hidden"
+                                   value="@Model[i].EnrollmentId" />
+                        </td>
+                        <td>@Model[i].SwimmerId</td>
+                        <td><input asp-for="@Model[i].LetterGrade" /></td>
+                    </tr>
+                }
+            </table>
+            <input type="submit" value="Submit" />
+        }
+    }
+</form>
+
+<a asp-controller="Coach" asp-action="SessionByCoach">Back to Coach's Session List</a>
+<p><a asp-controller="Coach" asp-action="Index">Back to Coach Home</a></p>

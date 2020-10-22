@@ -1,0 +1,23 @@
+﻿@using System.Security.Claims;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Smith Swimming School</title>
+</head>
+<body style="background-color:darkorange">
+    @RenderBody()
+    <br />
+    <div>Hello, @this.User.Identity.Name</div>
+    <footer>
+        @if (this.User.Identity.IsAuthenticated)
+        {
+            <form method="post" asp-controller="Account" asp-action="Logout">
+                <input type="submit" value="Logout" />
+            </form>
+        }
+        <p>&copy; @DateTime.Now.Year - L33t H4X0rz</p>
+    </footer>
+</body>
+</html>

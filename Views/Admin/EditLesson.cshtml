@@ -1,0 +1,19 @@
+﻿@model CourseProject.Models.Lesson
+<h3>Edit the Lesson</h3>
+<form asp-controller="Admin" asp-action="EditLesson"
+      method="post">
+    <input asp-for="LessonId" type="hidden" />
+    <label asp-for="LessonTitle">Lesson Name</label>
+    <input asp-for="LessonTitle" />
+    <br />
+    <label asp-for="SkillLevel">Skill Level</label>
+    <input asp-for="SkillLevel" />
+    <br />
+    <label asp-for="Tuition">Tuition</label>
+    <input asp-for="Tuition" />
+    <br />
+    <button type="submit">Update Lesson</button>
+</form>
+<p><a asp-controller="Admin" asp-action="AllLesson">Back to All Lessons</a></p>
+<br />
+<p><a asp-controller="Admin" asp-action="Index">Back to Administrator Homepage</a></p>

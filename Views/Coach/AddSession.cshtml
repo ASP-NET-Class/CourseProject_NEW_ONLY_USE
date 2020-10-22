@@ -1,0 +1,26 @@
+﻿@model CourseProject.Models.Session
+<h2>Add a Session</h2>
+<form asp-controller="Coach" asp-action="AddSession"
+      method="post">
+    <label asp-for="SessionTitle">Session Name</label>
+    <input asp-for="SessionTitle" />
+    <br />
+    <label asp-for="SeatCapacity">Seats Available</label>
+    <input asp-for="SeatCapacity" />
+    <br />
+    <label asp-for="StartDate">Class Start Date</label>
+    <input asp-for="StartDate" asp-format="{0:dd/MM/yyyy}" />
+    <br />
+    <label asp-for="EndDate">Class End Date</label>
+    <input asp-for="EndDate" asp-format="{0:dd/MM/yyyy}" />
+    <br />
+    <label asp-for="DailyStartTime">Session Start Time</label>
+    <input asp-for="DailyStartTime" />
+
+    <input asp-for="CoachId" type="hidden" />
+    <br />
+    <button type="submit">Add Session</button>
+</form>
+<p><a asp-controller="Coach" asp-action="AllLesson">Back to Lesson List</a></p>
+<br />
+<p><a asp-action="Index">Back to Coach Home</a></p>

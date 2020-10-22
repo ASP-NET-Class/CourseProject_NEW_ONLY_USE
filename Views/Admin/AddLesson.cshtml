@@ -1,0 +1,19 @@
+﻿@model CourseProject.Models.Lesson
+<h2>Add a Lesson</h2>
+<form asp-controller="Admin" asp-action="AddLesson" method="post">
+
+    <label asp-for="LessonTitle">Lesson Title</label>
+    <input asp-for="LessonTitle" />
+    <br />
+    <label asp-for="SkillLevel">Skill Level</label>
+    <input asp-for="SkillLevel" />
+    <br />
+    <label asp-for="Tuition">Tuition</label>
+    <input asp-for="Tuition" />
+    <br />
+    <button type="submit">Add Lesson</button>
+
+</form>
+<p><a asp-controller="Admin" asp-action="AllLesson">Back to All Lessons</a></p>
+<br />
+<p><a asp-controller="Admin" asp-action="Index">Back to Administrator Homepage</a></p>
