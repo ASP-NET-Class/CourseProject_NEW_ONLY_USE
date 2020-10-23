@@ -3,6 +3,7 @@
 <table border="1">
     <tr>
         <th>Session Title</th>
+        <th>Performance</th>
         <th>Grade</th>
     </tr>
     @foreach (var c in Model)
@@ -10,6 +11,7 @@
         <tr>
             <td>@c.Session.SessionTitle</td>
             <td>@Html.DisplayFor(m => c.LetterGrade)</td>
+            <td>@Html.DisplayFor(m => c.ProgressReport)</td>
         </tr>
     }
 </table>
