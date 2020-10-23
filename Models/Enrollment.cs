@@ -20,6 +20,9 @@ namespace CourseProject.Models
         public Session Session { get; set; }
         public Coach Coach { get; set; }
         [DisplayFormat(NullDisplayText = "No Grade")]
+        
+        //Add ProgressReport table
+        public string ProgressReport { get; set; }
         public LetterGrade? LetterGrade { get; set; }
 
         /*internal void SetLetterGrade(object p)
