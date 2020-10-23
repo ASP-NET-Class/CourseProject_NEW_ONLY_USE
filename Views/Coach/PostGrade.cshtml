@@ -14,6 +14,7 @@
                 <tr>
                     <th scope="col">Swimmer ID</th>
                     <th scope="col">Swimmer Name</th>
+                    <th scope="col">Performance</th>
                     <th scope="col">Coaches Feedback</th>
                 </tr>
                 @for (int i = 0; i < Model.Count(); i++)
@@ -26,6 +27,7 @@
                         </td>
                         <td>@Model[i].Swimmer.SwimmerName</td>
                         <td><input asp-for="@Model[i].LetterGrade" /></td>
+                        <td><input asp-for="@Model[i].ProgressReport" /></td>
                     </tr>
                 }
             </table>
