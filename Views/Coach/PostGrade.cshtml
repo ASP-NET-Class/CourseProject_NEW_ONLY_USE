@@ -24,7 +24,7 @@
                                    value="@Model[i].EnrollmentId" />
                             @Model[i].SwimmerId
                         </td>
-                        <td>@Model[i].SwimmerName</td>
+                        <td>@Model[i].Swimmer.SwimmerName</td>
                         <td><input asp-for="@Model[i].LetterGrade" /></td>
                     </tr>
                 }

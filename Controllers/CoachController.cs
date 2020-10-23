@@ -124,7 +124,7 @@ namespace CourseProject.Controllers
                 return NotFound();
             }
             var allSwimmers = await db.Enrollments.Include
-                (c => c.Session).Include(c => c.SwimmerName).Where(c => c.SessionId == id)
+                (c => c.Session).Include(c => c.Swimmer).Where(c => c.SessionId == id)
                 .ToListAsync();
             if (allSwimmers == null)
             {
