@@ -138,6 +138,7 @@ namespace CourseProject.Controllers
             foreach (var enrollment in enrollments)
             {
                 var er = db.Enrollments.Find(enrollment.EnrollmentId);
+                 er.ProgressReport = enrollment.ProgressReport;
                 er.LetterGrade = enrollment.LetterGrade;
             }
             db.SaveChanges();
