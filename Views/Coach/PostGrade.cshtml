@@ -12,19 +12,19 @@
         {
             <table border="1">
                 <tr>
-                    <th></th>
-                    <th>Swimmer ID</th>
-                    <th>Swimmer Name</th>
-                    <th>Coaches Feedback</th>
+                    <th scope="col">Swimmer ID</th>
+                    <th scope="col">Swimmer Name</th>
+                    <th scope="col">Coaches Feedback</th>
                 </tr>
                 @for (int i = 0; i < Model.Count(); i++)
                 {
                     <tr>
-                        <td>
+                        <td scope="row">
                             <input asp-for="@Model[i].EnrollmentId" type="hidden"
                                    value="@Model[i].EnrollmentId" />
+                            @Model[i].SwimmerId
                         </td>
-                        <td>@Model[i].SwimmerId</td>
+                        <td>@Model[i].SwimmerName</td>
                         <td><input asp-for="@Model[i].LetterGrade" /></td>
                     </tr>
                 }

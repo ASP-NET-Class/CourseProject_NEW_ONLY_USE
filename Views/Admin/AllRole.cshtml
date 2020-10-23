@@ -9,12 +9,12 @@
         <h3>All Roles</h3>
         <table border="1">
             <tr>
-                <th>Role Name</th>
+                <th scope="col">Role Name</th>
             </tr>
             @foreach (var role in Model)
             {
                 <tr>
-                    <td>@role.Name</td>
+                    <td scope="row">@role.Name</td>
                 </tr>
             }
         </table>

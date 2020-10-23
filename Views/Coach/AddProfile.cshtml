@@ -2,18 +2,19 @@
 <h2>Add or Make Changes to Your Coach Profile</h2>
 <form asp-action="AddProfile">
     <input asp-for="@Model.UserId" type="hidden" />
+    
+        <label asp-for="CoachName">Name</label>
+        <input asp-for="CoachName" />
+        <br />
+        <label asp-for="CoachEmail">Email</label>
+        <input asp-for="CoachEmail" />
+        <br />
+        <label asp-for="CoachPhone">Phone</label>
+        <input asp-for="CoachPhone" />
 
-    <label asp-for="CoachName">Name</label>
-    <input asp-for="CoachName" />
-    <br />
-    <label asp-for="CoachEmail">Email</label>
-    <input asp-for="CoachEmail" />
-    <br />
-    <label asp-for="CoachPhone">Phone</label>
-    <input asp-for="CoachPhone" />
-
-    <br />
-    <button type="submit">Add or Edit Profile</button>
+        <br />
+        <button type="submit">Add or Edit Profile</button>
+    
 </form>
 <br />
 <p><a asp-action="Index">Back to Coach Home</a></p>

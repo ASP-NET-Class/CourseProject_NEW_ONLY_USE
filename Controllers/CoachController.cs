@@ -1,4 +1,5 @@
 ﻿using CourseProject.Models;
+using CourseProject.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -123,7 +124,7 @@ namespace CourseProject.Controllers
                 return NotFound();
             }
             var allSwimmers = await db.Enrollments.Include
-                (c => c.Session).Where(c => c.SessionId == id)
+                (c => c.Session).Include(c => c.SwimmerName).Where(c => c.SessionId == id)
                 .ToListAsync();
             if (allSwimmers == null)
             {

@@ -12,13 +12,13 @@
         <p><a asp-action="Register">Add a User</a></p>
         <table border="1">
             <tr>
-                <th>User Name</th>
-                <th>Add Role</th>
+                <th scope="col">User Name</th>
+                <th scope="col">Add Role</th>
             </tr>
             @foreach (var user in Model)
             {
                 <tr>
-                    <td>@user.UserName</td>
+                    <td scope="row">@user.UserName</td>
                     <!--makes the Add a role text hyperlink which will go to the AdminController and
                         AddUserRole method with a value of user.Id-->
                     <td>

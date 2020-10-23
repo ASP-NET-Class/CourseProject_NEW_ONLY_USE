@@ -11,17 +11,17 @@
         <h2>All Lessons</h2>
         <table border="1">
             <tr>
-                <th>Lesson ID</th>
-                <th>Lesson Name</th>
-                <th>Skill Level</th>
-                <th>Tuition</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th scope="col">Lesson ID</th>
+                <th scope="col">Lesson Name</th>
+                <th scope="col">Skill Level</th>
+                <th scope="col">Tuition</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
             </tr>
             @foreach (var lesson in Model)
             {
                 <tr>
-                    <td>@lesson.LessonId</td>
+                    <td scope="row">@lesson.LessonId</td>
                     <td>@lesson.LessonTitle</td>
                     <td>@lesson.SkillLevel</td>
                     <td>@lesson.Tuition</td>
