@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CourseProject.Models
 {
@@ -15,7 +16,8 @@ namespace CourseProject.Models
         public int SeatCapacity { get; set; }
         [DataType(DataType.Time)]
         public DateTime DailyStartTime { get; set; }
-        public int CoachId { get; set; }
+        [ForeignKey("Coach")]
+        public int? CoachId { get; set; }
         public Coach Coach { get; set; }
         public ICollection<Enrollment> Enrollments { get; set; }
     }

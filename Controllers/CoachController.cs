@@ -143,32 +143,32 @@ namespace CourseProject.Controllers
             db.SaveChanges();
             return RedirectToAction("SessionByCoach");
         }
-        public IActionResult EditSession(int id)
-        {
-            Session session;
-            session = db.Sessions.Find(id);
-            return View(session);
-        }
-        [HttpPost]
-        public IActionResult EditSession(Session session)
-        {
-            db.Update(session);
-            db.SaveChanges();
-            return RedirectToAction("SessionByCoach");
-        }
-        public IActionResult DeleteSession(int id)
-        {
-            Session session;
-            session = db.Sessions.Find(id);
-            return View(session);
-        }
-        [HttpPost]
-        public IActionResult DeleteSession(Session session)
-        {
-            db.Remove(session);
-            db.SaveChanges();
-            return RedirectToAction("SessionByCoach");
-        }
+        //public IActionResult EditSession(int id)
+        //{
+           // Session session;
+            //session = db.Sessions.Find(id);
+            //return View(session);
+        //}
+        //[HttpPost]
+        //public IActionResult EditSession(Session session)
+        //{
+            //db.Update(session);
+            //db.SaveChanges();
+            //return RedirectToAction("SessionByCoach");
+        //}
+        //public IActionResult DeleteSession(int id)
+        //{
+           // Session session;
+            //session = db.Sessions.Find(id);
+            //return View(session);
+        //}
+        //[HttpPost]
+       // public IActionResult DeleteSession(Session session)
+        //{
+           // db.Remove(session);
+           // db.SaveChanges();
+           // return RedirectToAction("SessionByCoach");
+        //}
     }
 }
 
